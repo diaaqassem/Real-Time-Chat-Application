@@ -22,51 +22,136 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+### **Real-Time Chat Application**
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Installation
+This project is a **real-time chat application** developed using **NestJS** and **Socket.IO**. It supports features like creating rooms, joining rooms, sending and receiving messages, and managing connections. The application includes integration with Google Login or email-based authentication.
 
+---
+
+## **Features**
+
+### **Real-Time Communication**
+- **WebSocket-based** real-time communication powered by **Socket.IO**.
+- Users can join rooms, send messages, and leave rooms with immediate updates.
+
+### **Room Management**
+- Create and manage chat rooms dynamically.
+- Rooms are automatically cleaned up when empty.
+
+### **Authentication**
+- Google Login or email-based login for user authentication.
+- Validates users before allowing them to join or create rooms.
+
+### **Message Handling**
+- Users can send and receive messages in real-time.
+- Messages are stored and can be retrieved by room.
+
+### **Admin Monitoring**
+- Integrated with the **Socket.IO Admin UI** for monitoring WebSocket events and debugging during development.
+
+---
+
+## **Installation**
+
+### **1. Clone the Repository**
 ```bash
-$ npm install
+git clone https://github.com/diaaqassem/Real-Time-Chat-Application.git
+cd Real-Time-Chat-Application
 ```
 
-## Running the app
-
+### **2. Install Dependencies**
+Ensure you have **Node.js** (v16 or above) and **npm** installed.
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+npm install
 ```
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+### **3. Environment Variables**
+Create a `.env` file in the root directory and configure the following:
+```env
+PORT=5000
+APP_URL = 'http://localhost:5000/api'
+DB_URL=<your-mongodb-connection-string>
+SECRET_KEY=<your-jwt-secret>
+GOOGLE_CLIENT_ID=<your-google-client-id>
+GOOGLE_SECRET=<your-google-client-secret>
+ivLength=16
 ```
 
-## Support
+### **4. Start the Application**
+```bash
+npm run start:dev
+```
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+---
 
-## Stay in touch
+## **Endpoints**
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### **Socket.IO Events**
+| **Event Name**       | **Description**                                      | **Payload**                    |
+|-----------------------|------------------------------------------------------|--------------------------------|
+| `Create_Room`         | Creates a new chat room.                             | `{ userID, name }`            |
+| `Join_Room`           | Joins a user to an existing room.                    | `{ userID, roomID }`          |
+| `Send_Message`        | Sends a message to a room.                           | `{ content, userID, roomID }` |
+| `Leave_Room`          | Removes a user from a room.                          | `{ userID, roomID }`          |
+| `Get_Messages`        | Retrieves all messages from a specific room.         | `{ roomID, userID }`          |
+
+---
+
+## **Technology Stack**
+- **Backend Framework**: NestJS
+- **WebSocket**: Socket.IO
+- **Database**: MongoDB
+- **Authentication**: Google OAuth, Session
+- **Language**: TypeScript
+
+---
+
+## **Setup for Development**
+
+### **Enable Socket.IO Admin Panel**
+To enable the admin UI for monitoring events, visit `https://admin.socket.io` and connect to:
+```text
+http://localhost:5001
+```
+
+### **Database**
+Ensure MongoDB is running locally or use a cloud database (e.g., MongoDB Atlas).
+
+---
+
+## **Project Structure**
+```
+src/
+├── auth/               # Authentication module (Google Login, JWT)
+├── common/             # Common utilities and services (e.g., I18n)
+├── dtos/               # Data Transfer Objects
+├── message/            # Message handling logic
+├── rooms/              # Room management logic
+├── gateway/            # WebSocket Gateway (ChatGateway)
+```
+
+---
+
+## **Usage Instructions**
+
+1. **Login with Google** or **Email** to authenticate the user.
+2. **Create or Join a Room** to start a conversation.
+3. Use **real-time messaging** to chat with other users in the room.
+4. **Monitor rooms and messages** via the admin panel.
+
+---
+
+## **Some Features**
+- Improve error handling and logging.
+- Implement room permissions.
+- Add user notifications for other users joined room or leave room.
+
+---
+
 
 ## License
 
