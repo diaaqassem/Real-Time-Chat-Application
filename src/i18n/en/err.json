@@ -1,0 +1,6 @@
+{
+  "USER_EXIT": "Sorry, User already exist in the database",
+  "INVALID_CREDENTIALS": "Invalid username or password",
+  "PASSWORD_MISMATCH": "Password mismatch",
+  "PASS_LEN": "Password should have at least 8 characters"
+}

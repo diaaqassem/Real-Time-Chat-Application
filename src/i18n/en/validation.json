@@ -1,0 +1,8 @@
+{
+  "STR": "must be a string {prperty}",
+  "NOT_EMPTY": "must not be empty {prperty}",
+  "EMAIL": "Invalid email",
+  "PASSWORD": "Password must be at least 8 characters long",
+  "USERNAME": "Username must be at least 3 characters long",
+  "USER_REGISTER": "Register successfully"
+}

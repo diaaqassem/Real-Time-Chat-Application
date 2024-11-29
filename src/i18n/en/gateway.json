@@ -1,0 +1,13 @@
+{
+  "RECIEVE_MESSAGE": "Recieve message",
+  "SEND_MESSAGE": "Send message",
+  "ARRIVE_MESSAGE": " Recover message",
+  "ROOM_DATA": " Details Room data",
+  "JOIN_ROOM": "Join room ",
+  "JOIN_FAILED": " Join failed In Room",
+  "USER_EXIT_ROOM":"you are in room ",
+  "USER_ERROR": "Invalid User ID ",
+  "USER_ROOM_ERROR": "Invalid User ID or  Room ID ",
+  "LEAVE_ROOM": "User Leave Room",
+  "CREATE_ROOM": "Create Room successfully"
+}
