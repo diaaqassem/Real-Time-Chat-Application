@@ -123,16 +123,6 @@ Ensure MongoDB is running locally or use a cloud database (e.g., MongoDB Atlas).
 
 ---
 
-## **Project Structure**
-```
-src/
-├── auth/               # Authentication module (Google Login, JWT)
-├── common/             # Common utilities and services (e.g., I18n)
-├── dtos/               # Data Transfer Objects
-├── message/            # Message handling logic
-├── rooms/              # Room management logic
-├── gateway/            # WebSocket Gateway (ChatGateway)
-```
 
 ---
 
@@ -152,7 +142,3 @@ src/
 
 ---
 
-
-## License
-
-Nest is [MIT licensed](LICENSE).
